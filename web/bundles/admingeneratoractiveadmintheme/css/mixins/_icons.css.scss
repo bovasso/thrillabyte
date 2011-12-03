@@ -1,0 +1,35 @@
+span.icon { vertical-align: middle; display: inline-block; }
+span.icon svg { vertical-align: baseline; }
+
+@mixin icon-color ($color) {
+  span.icon svg {
+    path, polygon, rect, circle { fill: $color !important; }
+  }
+}
+
+@mixin icon-size ($size) {
+  span.icon { width: $size; height: $size; }
+  span.icon svg { width: $size; height: $size; }
+}
+
+@mixin icon($color, $size) {
+  @include icon-color($color);
+  @include icon-size($size);
+}
+
+@include icon-size(0.8em);
+
+@import "icons/*.png";
+
+.icon24 {
+  height: 24px;
+  width: 24px;
+  display: block;
+  float: left;
+}
+
+.actions {
+  .edit   { @extend .icon24; @include icons-sprite(pen); }
+  .show   { @extend .icon24; @include icons-sprite(search); }
+  .delete { @extend .icon24; @include icons-sprite(button-cross); }
+}

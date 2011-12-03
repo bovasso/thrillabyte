@@ -1,0 +1,36 @@
+generator: admingenerator.generator.doctrine_odm
+params:
+  model: Thrillabyte\AppBundle\Document\Category
+  namespace_prefix: Thrillabyte
+  bundle_name: AppBundle
+  fields: ~
+
+builders:
+  list:
+    params:
+      title: Categories
+      display: ~
+      actions:
+        new: ~
+      object_actions:
+        edit: ~
+        delete: 
+          confirm: Are you sure you want to delete {{ Category.name }} ?
+  filters:
+    params:
+      display: ~
+  new:
+    params:
+      title: New Category
+      display:
+        "Category":  [name]
+      actions:
+        list: ~
+  edit:
+    params:
+      title: {{ Category.name }}
+      display:
+        "Category":  [name]
+      actions:
+        list: ~
+  delete: ~

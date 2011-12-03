@@ -1,0 +1,126 @@
+[symfony]
+    git=http://github.com/symfony/symfony.git
+    version=v2.0.6
+
+[twig]
+    git=http://github.com/fabpot/Twig.git
+    version=v1.1.2
+
+[monolog]
+    git=http://github.com/Seldaek/monolog.git
+    version=1.0.2
+
+[doctrine-common]
+    git=http://github.com/doctrine/common.git
+    version=2.1.2
+
+[doctrine-dbal]
+    git=http://github.com/doctrine/dbal.git
+    version=2.1.3
+
+[doctrine]
+    git=http://github.com/doctrine/doctrine2.git
+    version=2.1.2
+
+[swiftmailer]
+    git=http://github.com/swiftmailer/swiftmailer.git
+    version=v4.1.3
+
+[assetic]
+    git=http://github.com/kriswallsmith/assetic.git
+    version=v1.0.2
+
+[twig-extensions]
+    git=http://github.com/fabpot/Twig-extensions.git
+
+[metadata]
+    git=https://github.com/schmittjoh/metadata.git
+    version=1.1.0 ; <- make sure to get 1.1, not 1.0
+
+[JMSAopBundle]
+    git=https://github.com/schmittjoh/JMSAopBundle.git
+    target=/bundles/JMS/AopBundle
+
+[cg-library]
+    git=https://github.com/schmittjoh/cg-library.git
+
+[SensioFrameworkExtraBundle]
+    git=http://github.com/sensio/SensioFrameworkExtraBundle.git
+    target=/bundles/Sensio/Bundle/FrameworkExtraBundle
+
+[JMSSecurityExtraBundle]
+    git=http://github.com/schmittjoh/JMSSecurityExtraBundle.git
+    target=/bundles/JMS/SecurityExtraBundle
+		version=origin/master
+
+[SensioDistributionBundle]
+    git=http://github.com/sensio/SensioDistributionBundle.git
+    target=/bundles/Sensio/Bundle/DistributionBundle
+    version=origin/1.0
+
+[SensioGeneratorBundle]
+    git=http://github.com/sensio/SensioGeneratorBundle.git
+    target=/bundles/Sensio/Bundle/GeneratorBundle
+
+[AsseticBundle]
+    git=http://github.com/symfony/AsseticBundle.git
+    target=/bundles/Symfony/Bundle/AsseticBundle
+    version=v1.0.1
+
+[doctrine-mongodb]
+    git=http://github.com/doctrine/mongodb.git
+
+[doctrine-mongodb-odm]
+    git=http://github.com/doctrine/mongodb-odm.git
+
+[DoctrineMongoDBBundle]
+    git=http://github.com/symfony/DoctrineMongoDBBundle.git
+    target=/bundles/Symfony/Bundle/DoctrineMongoDBBundle
+		version=v2.0.0
+
+[FOSUserBundle]
+    git=git://github.com/FriendsOfSymfony/FOSUserBundle.git
+    target=bundles/FOS/UserBundle
+
+[FOSRestBundle]
+    git=git://github.com/FriendsOfSymfony/FOSRestBundle.git
+    target=bundles/FOS/RestBundle
+
+[JMSSerializerBundle]
+    git=git://github.com/schmittjoh/JMSSerializerBundle.git
+    target=bundles/JMS/SerializerBundle
+
+[doctrine-fixtures]
+    git=http://github.com/doctrine/data-fixtures.git
+
+[DoctrineFixturesBundle]
+    git=http://github.com/symfony/DoctrineFixturesBundle.git
+    target=/bundles/Symfony/Bundle/DoctrineFixturesBundle
+
+[Admingenerator]
+    git=git://github.com/cedriclombardot/AdmingeneratorGeneratorBundle.git
+    target=/bundles/Admingenerator/GeneratorBundle
+    version=origin/master
+
+[AdmingeneratorUserBundle]
+    git=git://github.com/cedriclombardot/AdmingeneratorUserBundle.git
+    target=/bundles/Admingenerator/UserBundle
+    version=origin/master
+
+[AdmingeneratorActiveAdminThemeBundle]
+    git=git://github.com/cedriclombardot/AdmingeneratorActiveAdminThemeBundle.git
+    target=/bundles/Admingenerator/ActiveAdminThemeBundle
+    version=origin/master
+
+[Pagerfanta]
+    git=git://github.com/whiteoctober/Pagerfanta.git
+    target=/pagerfanta
+
+[WhiteOctoberPagerfantaBundle]
+    git=git://github.com/whiteoctober/WhiteOctoberPagerfantaBundle.git
+    target=/bundles/WhiteOctober/PagerfantaBundle
+		version=origin/symfony2.0
+
+[TwigGenerator]
+    git=git://github.com/cedriclombardot/TwigGenerator.git
+    target=/twig-generator

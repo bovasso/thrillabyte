@@ -1,0 +1,842 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<head lang="en">
+	<meta http-equiv="content-type" content="text/html;charset=utf-8">
+	<title>Adminium Template Documentation</title>
+	<!-- Framework CSS -->
+	<link rel="stylesheet" href="assets/blueprint-css/screen.css" type="text/css" media="screen, projection">
+	<link rel="stylesheet" href="assets/blueprint-css/print.css" type="text/css" media="print">
+	<!--[if lt IE 8]><link rel="stylesheet" href="assets/blueprint-css/ie.css" type="text/css" media="screen, projection"><![endif]-->
+	<link rel="stylesheet" href="assets/blueprint-css/plugins/fancy-type/screen.css" type="text/css" media="screen, projection">
+	<style type="text/css" media="screen">
+		p, table, hr, .box { margin-bottom:25px; }
+		.box p { margin-bottom:10px; }
+	</style>
+</head>
+
+
+
+
+
+<body>
+	<div class="container">
+	
+		<h3 class="center alt">&ldquo;Adminium&rdquo; Documentation by &ldquo;Emil Nikov&rdquo; v1.1</h3>
+		
+		<hr>
+		
+		<h1 class="center">&ldquo;Adminium&rdquo;</h1>
+		
+		<div class="borderTop">
+			<div class="span-6 colborder info prepend-1">
+				<p class="prepend-top">
+					<strong>
+					Created: 21/11/2011<br>
+					By: Emil Nikov<br>
+					Email: <a href="mailto:contacts@enstyled.com">contacts@enstyled.com</a>
+					</strong>
+				</p>
+			</div><!-- end div .span-6 -->		
+	
+			<div class="span-12 last">
+				<p class="prepend-top append-0">Thank you for purchasing my theme. If you have any questions that are beyond the scope of this help file, please feel free to email via my user page contact form <a href="http://themeforest.net/user/enstyled">here</a>. Thanks so much!</p>
+			</div>
+		</div><!-- end div .borderTop -->
+		
+		
+		
+		
+		
+		
+		<hr>
+		
+		
+		
+		
+		
+		
+		<h2 id="toc" class="alt">Table of Contents</h2>
+		<ol class="alpha">
+			<li><a href="#htmlStructure">HTML Structure</a></li>
+			<li><a href="#cssFiles">CSS Files and Structure</a></li>
+			<li><a href="#javascript">JavaScript</a></li>
+			<li><a href="#psdFiles">PSD Files</a></li>
+			<li><a href="#credits">Sources and Credits</a></li>			
+		</ol>
+		
+		
+		
+		
+		
+		<hr>
+		
+		
+		
+		
+		
+		
+		<h3 id="htmlStructure"><strong>A) HTML Structure</strong> - <a href="#toc">top</a></h3>
+		<p>This template has liquid layout, which means it's width is adjustable to your browser window, while having minimum width of 900px, which you can change according to your needs.</p>
+		<p>All elements are named with appropriate IDs and Classes, so you can easily find what you need to edit in the HTML and CSS.</p>
+		
+		
+		<hr />
+		
+		
+		
+		<p><strong>Header</strong></p>
+		<p>On the top of the page, there is a div with ID of <em>"header"</em>. This holds for the title of the website, the user profile menu and the search bar:</p>
+		
+		
+		
+		<pre>
+&lt;div id="header"&gt;
+
+	&lt;h1&gt;&lt;a href="#"&gt;ADMINIUM&lt;/a&gt;&lt;/h1&gt;
+	
+	&lt;form action="" method="post" class="searchform"&gt;
+		&lt;input type="text" class="text" value="Search..." /&gt;
+		&lt;input type="submit" class="submit" value="" /&gt;
+	&lt;/form&gt;
+		
+	&lt;div class="userprofile"&gt;
+		&lt;ul&gt;
+			&lt;li&gt;&lt;a href="#"&gt;&lt;img src="images/avatar.gif" alt="" /&gt; enstyled&lt;/a&gt;
+				&lt;ul&gt;
+					&lt;li&gt;&lt;a href="#"&gt;Profile&lt;/a&gt;&lt;/li&gt;
+					&lt;li&gt;&lt;a href="#"&gt;Messages&lt;/a&gt;&lt;/li&gt;
+					&lt;li&gt;&lt;a href="#"&gt;Logout&lt;/a&gt;&lt;/li&gt;
+				&lt;/ul&gt;
+			&lt;/li&gt;
+		&lt;/ul&gt;
+	&lt;/div&gt;
+
+&lt;/div&gt;			&lt;!-- #header ends --&gt;
+		</pre>
+		
+		
+		
+		<p>To make the title/logo to link to your homepage, replace the '#' in the anchor tag of the H1, with your website URL.</p>
+		
+		<p>The search bar resizes when focused, to make more room for typing and for the quick results dropdown. When you start typing in the search bar, after the 3rd symbol, an AJAX call is made, to a file, returning quick results, which you can generate and cache from your back-end.</p>
+		
+		<p>The user profile menu holds the links for your profile actions, structured in an unordered list. The width of the user profile menu depends on the width of the profile name.</p>
+		
+		
+		
+		
+		
+		
+		
+		
+		<hr />
+		
+		
+		
+		
+		
+		
+		
+		
+		<p><strong>Sidebar</strong></p>
+		<p>The sidebar is the left column of the layout, which holds the main navigation with the sub-pages and a "server status box", which you could use to monitor your servers or services with a back-end script.</p>
+		
+		
+		<pre>
+&lt;div id="sidebar"&gt;
+	&lt;ul id="nav"&gt;
+		&lt;li&gt;&lt;a href="#"&gt;&lt;strong&gt;&lt;img src="images/nav/dashboard.png" alt="" /&gt; Dashboard&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href="#"&gt;&lt;img src="images/nav/pages.png" alt="" /&gt; Pages&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href="#"&gt;&lt;img src="images/nav/media.png" alt="" /&gt; Media&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href="#"&gt;&lt;img src="images/nav/calendar.png" alt="" /&gt; Calendar&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href="#"&gt;&lt;img src="images/nav/users.png" alt="" /&gt; Users&lt;/a&gt;
+			&lt;ul&gt;
+				&lt;li&gt;&lt;a href="#"&gt;Add new user&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a href="#"&gt;User groups&lt;/a&gt;&lt;/li&gt;
+			&lt;/ul&gt;
+		&lt;/li&gt;
+		&lt;li&gt;&lt;a href="#"&gt;&lt;img src="images/nav/settings.png" alt="" /&gt; Settings&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href="#"&gt;&lt;span&gt;12&lt;/span&gt; &lt;img src="images/nav/support.png" alt="" /&gt; Support&lt;/a&gt;&lt;/li&gt;
+	&lt;/ul&gt;
+	
+	&lt;div class="status_box"&gt;
+		&lt;ul&gt;
+			&lt;li&gt;&lt;a href="#" class="online" title="Online"&gt;Web server 1&lt;/a&gt;&lt;/li&gt;
+			&lt;li&gt;&lt;a href="#" class="online" title="Online"&gt;Web server 2&lt;/a&gt;&lt;/li&gt;
+			&lt;li&gt;&lt;a href="#" class="warning" title="Warning"&gt;DB server&lt;/a&gt;&lt;/li&gt;
+			&lt;li&gt;&lt;a href="#" class="offline" title="Offline"&gt;Mail server&lt;/a&gt;&lt;/li&gt;
+		&lt;/ul&gt;
+	&lt;/div&gt;
+&lt;/div&gt;		&lt;!-- #sidebar ends --&gt;
+		</pre>
+		
+		
+		
+		
+		<p>The main navigation is held in an unordered list with an ID of "nav". The currently active item is in <em>strong</em> tags. This changes the color of the item and puts a pointer.</p>
+		
+		<p>The icons in the main navigation are PNG images for easy customization. The image files could be found in the images/nav/ folder. You can add/replace icons with any 16x16 PNG images. There are some extra icons provided.</p>
+		
+		<p>The sub-pages are held in nested unordered lists, like you can see at the "Users" item. You can set these to be opened, only if the parent item is active with your back-end script.</p>
+		
+		<p>The navigation items supports notification badges. These are held in <em>span</em> tags, as could be seen at the "Support" item.</p>
+		
+		<p>The status box holds an unordered list, containing links with statuses - green, yellow or red lights. The lights are controlled by the classes of the links.</p>
+		
+		
+		
+		
+		
+		
+				
+		<hr />		
+		
+		
+	
+		
+		
+		
+		
+		<p><strong>Content</strong></p>
+		
+		<p>The main content of the page is held by a div with an ID of "content". It's the right, wide part of the layout. The width of the content is liquid, so it will adjust to the browser window size.</p>
+
+		
+		
+		
+	
+	
+		<hr />	
+		
+		
+		
+		
+		
+		
+		
+		<p><strong>Breadcrumb</strong></p>
+		
+		<p>At the top of the content, there is a breadcrumb, showing back links, for easier navigation.</p>
+
+		<pre>
+&lt;div class="breadcrumb"&gt;
+	&lt;a href="#"&gt;Adminium&lt;/a&gt; &raquo; 
+	&lt;a href="#"&gt;Section title&lt;/a&gt; &raquo; 
+	&lt;a href="#"&gt;Subsection title&lt;/a&gt; &raquo; 
+	&lt;a href="#"&gt;Page title&lt;/a&gt;
+&lt;/div&gt;
+		</pre>	
+	
+	
+	
+	
+	
+	
+		<hr />		
+		
+		
+		
+		
+		<p><strong>Statistics</strong></p>
+		
+		<p>The graph, used in the "Statistics" block is a table with a class of <em>"stats"</em>, transformed with the jQuery Visualize plugin. The plugin takes the values in the table and draws the graphs.</p>
+		
+		<pre>
+&lt;table class="stats" rel="line" cellpadding="0" cellspacing="0" width="100%"&gt;
+			
+	&lt;thead&gt;
+		&lt;tr&gt;
+			&lt;td&gt;&nbsp;&lt;/td&gt;
+			&lt;th scope="col"&gt;01.03&lt;/th&gt;
+			&lt;th scope="col"&gt;02.03&lt;/th&gt;
+			&lt;th scope="col"&gt;03.03&lt;/th&gt;
+			&lt;th scope="col"&gt;04.03&lt;/th&gt;
+			&lt;th scope="col"&gt;05.03&lt;/th&gt;
+			&lt;th scope="col"&gt;06.03&lt;/th&gt;
+			&lt;th scope="col"&gt;07.03&lt;/th&gt;
+			&lt;th scope="col"&gt;08.03&lt;/th&gt;
+			&lt;th scope="col"&gt;09.03&lt;/th&gt;
+			&lt;th scope="col"&gt;10.03&lt;/th&gt;
+			&lt;th scope="col"&gt;11.03&lt;/th&gt;
+			&lt;th scope="col"&gt;12.03&lt;/th&gt;
+			&lt;th scope="col"&gt;13.03&lt;/th&gt;
+			&lt;th scope="col"&gt;14.03&lt;/th&gt;
+		&lt;/tr&gt;
+	&lt;/thead&gt;
+	
+	&lt;tbody&gt;
+		&lt;tr&gt;
+			&lt;th&gt;Page views&lt;/th&gt;
+			&lt;td&gt;2967&lt;/td&gt;
+			&lt;td&gt;2356&lt;/td&gt;
+			&lt;td&gt;1882&lt;/td&gt;
+			&lt;td&gt;1820&lt;/td&gt;
+			&lt;td&gt;2510&lt;/td&gt;
+			&lt;td&gt;2803&lt;/td&gt;
+			&lt;td&gt;3000&lt;/td&gt;
+			&lt;td&gt;2290&lt;/td&gt;
+			&lt;td&gt;1600&lt;/td&gt;
+			&lt;td&gt;1920&lt;/td&gt;
+			&lt;td&gt;1550&lt;/td&gt;
+			&lt;td&gt;1270&lt;/td&gt;
+			&lt;td&gt;2200&lt;/td&gt;
+			&lt;td&gt;2481&lt;/td&gt;
+		&lt;/tr&gt;
+		
+		&lt;tr&gt;
+			&lt;th&gt;Unique visitors&lt;/th&gt;								
+			&lt;td&gt;2042&lt;/td&gt;
+			&lt;td&gt;1856&lt;/td&gt;
+			&lt;td&gt;1082&lt;/td&gt;
+			&lt;td&gt;1220&lt;/td&gt;
+			&lt;td&gt;1510&lt;/td&gt;
+			&lt;td&gt;1803&lt;/td&gt;
+			&lt;td&gt;2180&lt;/td&gt;
+			&lt;td&gt;1705&lt;/td&gt;
+			&lt;td&gt;940&lt;/td&gt;
+			&lt;td&gt;1020&lt;/td&gt;
+			&lt;td&gt;1150&lt;/td&gt;
+			&lt;td&gt;680&lt;/td&gt;
+			&lt;td&gt;1500&lt;/td&gt;
+			&lt;td&gt;1781&lt;/td&gt;
+		&lt;/tr&gt;
+		
+		&lt;tr&gt;
+			&lt;th&gt;Sales&lt;/th&gt;								
+			&lt;td&gt;929&lt;/td&gt;
+			&lt;td&gt;263&lt;/td&gt;
+			&lt;td&gt;697&lt;/td&gt;
+			&lt;td&gt;436&lt;/td&gt;
+			&lt;td&gt;342&lt;/td&gt;
+			&lt;td&gt;989&lt;/td&gt;
+			&lt;td&gt;1151&lt;/td&gt;
+			&lt;td&gt;941&lt;/td&gt;
+			&lt;td&gt;371&lt;/td&gt;
+			&lt;td&gt;556&lt;/td&gt;
+			&lt;td&gt;120&lt;/td&gt;
+			&lt;td&gt;213&lt;/td&gt;
+			&lt;td&gt;300&lt;/td&gt;
+			&lt;td&gt;821&lt;/td&gt;
+		&lt;/tr&gt;
+	&lt;/tbody&gt;
+	
+&lt;/table&gt;
+		</pre>
+		
+		<p>The elements in the &lt;thead&gt; are the X axis, which represents the dates. The elements in the &lt;tbody&gt; are the values, taken to draw the graphs. Each &lt;tr&gt; in the &lt;tbody&gt; creates a separate graph, so you can have as many graphs as you need. You can customize the chart type per-table, by simply changing the value of the "rel" attribute to one of the following: 'bar', 'area', 'pie', 'line'.</p>
+		
+		<p>For more in-depth documentation on the jQuery Visualize plugin, please visit <a href="http://www.filamentgroup.com/lab/update_to_jquery_visualize_accessible_charts_with_html5_from_designing_with/">their website</a>.</p>
+		
+		
+		
+		
+		
+		<hr />
+		
+		
+		
+		
+		<p><strong>Today's statistics</strong></p>
+		
+		<p>Under the statistics graphs, there is a table, showing the today's statistics at a glance:</p>
+		
+		<pre>
+&lt;table width="100%" cellpadding="0" cellspacing="0" class="today_stats"&gt;
+	&lt;tr&gt;
+		&lt;td&gt;&lt;strong&gt;2481&lt;/strong&gt; page views &lt;span class="goup"&gt;+53%&lt;/span&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;strong&gt;1781&lt;/strong&gt; unique visitors &lt;span class="goup"&gt;+53%&lt;/span&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;strong&gt;151&lt;/strong&gt; sales &lt;span class="godown"&gt;-12%&lt;/span&gt;&lt;/td&gt;
+		&lt;td class="last"&gt;&lt;strong&gt;12&lt;/strong&gt; support requests&lt;/td&gt;
+	&lt;/tr&gt;
+&lt;/table&gt;
+		</pre>
+		
+		
+		
+		
+		
+		
+		<hr />
+		
+		
+		
+		
+		
+		
+
+		<p><strong>Messages</strong></p>
+		
+		<p>Adminium comes with two types of messages - inline messages and HUD messages.</p>
+		
+		<p>The inline messages comes in 4 styles - Information, Warning, Success and Error. Their structure is as follows:</p>
+		
+		<pre>
+	&lt;div class="message errormsg"&gt;&lt;p&gt;An error message goes here&lt;/p&gt;&lt;/div&gt;
+	&lt;div class="message success"&gt;&lt;p&gt;A success message goes here&lt;/p&gt;&lt;/div&gt;
+	&lt;div class="message info"&gt;&lt;p&gt;An informative message goes here&lt;/p&gt;&lt;/div&gt;
+	&lt;div class="message warning"&gt;&lt;p&gt;A warning message goes here&lt;/p&gt;&lt;/div&gt;
+		</pre>
+		
+		
+		<p>The HUD messages are designed to show result of an action, like AJAX call for example. To trigger a HUD message, in your JavaScript code write:</p>
+		
+		<pre>
+hudMsg('success', 'Page loaded successfully', 2000);
+		</pre>
+		
+		<p>Where 'success' is the type of message, 'Page loaded successfully' is the text of your message and the third parameter is the time to stay on screen, in milliseconds (2000 = 2 seconds). You can see demo code in js/custom.js, under <em>"HUD Messages"</em>.</p>
+		
+		<p>You can have any type of HUD messages, you just need to make an image for it. For example if you want to have a type of "beer", just make sure to have an image, named msg_beer.png in your images/ folder.</p>
+		
+		
+		
+		
+		
+		
+		
+		<hr />		
+		
+		
+
+		
+		
+		
+		
+		<p><strong>Progress bars</strong></p>
+		
+		<p>Adminium comes with 2 sizes of progress bars, each in 4 colors.</p>
+		
+		<pre>
+&lt;div class="progress_bar small"&gt;
+	&lt;div class="progress_complete" style="width: 25%;"&gt;
+		&lt;span&gt;25%&lt;/span&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="progress_bar small"&gt;
+	&lt;div class="progress_complete green" style="width: 50%;"&gt;
+		&lt;span&gt;50%&lt;/span&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="progress_bar"&gt;
+	&lt;div class="progress_complete red" style="width: 75%;"&gt;
+		&lt;span&gt;75%&lt;/span&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="progress_bar"&gt;
+	&lt;div class="progress_complete orange" style="width: 100%;"&gt;
+		&lt;span&gt;100%&lt;/span&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+		</pre>
+		
+		
+		<p>The div with class "progress_bar" is the holder of the progress bar. Adding class of "small" to it makes it, well... smaller. The div with class "progress_complete" is the actual progress bar, which shows how much is completed, by the width of the element. By adding a second class of "green", "red" or "orange", you can change the colors of the bar. If you use the bigger bars, you can add a percentage number in the "progress_complete" div.</p>
+		
+		<p>The progress bars could be animated, as you can see in the demo. The animation is done via JavaScript. You can see the code in js/custom.js, under <em>"Progress bars animations"</em>:</p>
+		
+		<pre>
+// Progress bars animations
+$('.progress_complete').click(function() {
+	var totalWidth = $(this).parents('.progress_bar').width();
+	$(this).animate({ width: totalWidth }, 600, function() {
+		$(this).find('span').html('100%');
+	});
+});
+
+		</pre>
+
+		
+		
+		
+		
+		
+		<hr />			
+		
+		
+		
+		
+		
+		
+		<p><strong>Date picker</strong></p>
+		
+		<p>There is a handy date picker, to use when working with dates. The date picker is powered by the awesome <a href="http://jonathanleighton.com/projects/date-input">jQuery Date Input plugin</a>. Basically you can add it to any input field with type of "text", just by adding a class of <em>"date_picker"</em>, like so:</p>
+		
+		<pre>
+	&lt;input type="text" class="text date_picker" /&gt;
+		</pre>
+		
+		<p>When the input is clicked, a box pops up, displaying a calendar, from which you can pick your date.</p>
+
+		
+		
+		
+		
+		
+		<hr />
+
+
+
+
+
+		<p><strong>Color picker</strong></p>
+		
+		<p>The template comes with a neat color picker, powered by the <a href="https://github.com/claviska/jquery-miniColors/">jQuery miniColors</a> plugin. You can add it to any input field with type of "text", just by adding a class of <em>"color_picker"</em>, like so:</p>
+		
+		<pre>
+	&lt;input type="text" class="text color_picker" /&gt;
+		</pre>
+		
+		<p>Click on the input brings the color picker up.</p>
+
+		
+		
+		
+		
+		
+		<hr />
+		
+		
+		
+		
+		
+		
+		<p><strong>Custom file inputs</strong></p>
+		
+		<p>Adminium comes with a unified custom file inputs:</p>
+		
+		<pre>
+&lt;label&gt;Custom file input label:&lt;/label&gt; 
+&lt;input type="file" class="file styled" title="Select file 1" /&gt; 
+&lt;input type="file" class="file styled" title="Select file 2" /&gt;
+		</pre>
+		
+		
+		<p>JavaScript is overwriting each file input, having a class of "styled". The title of the element will be taken to make the label of the input button. When a file is selected, a filed will appear next to the input button, showing the name of the selected file.</p>
+		
+		
+		
+		
+		
+		
+		<hr />
+		
+		
+		
+		
+		
+		
+		<p><strong>On/Off switch</strong></p>
+		
+		<p>You can use the custom On/Off switch with the following code:</p>
+		
+		<pre>
+&lt;p class="onoffswitch"&gt;
+	&lt;input type="checkbox" class="onoffbtn" checked="checked" /&gt;
+	&lt;label&gt;Checkbox label&lt;/label&gt;
+&lt;/p&gt;
+		</pre>
+		
+		<p>It takes a checkbox and turns it to a switch. If there is a "checked" attribute, the switch will be set to <strong>"on"</strong>, otherwise - to <strong>"off"</strong>. The switching is done by a neat animation.</p>
+		
+		
+		
+		
+		
+		<hr />
+				
+		
+		
+		
+		<p><strong>Sliders</strong></p>
+		
+		<p>You can have multiple sliders on one page. The sliders could be with single value - with one handle, or ranged - with two handles.</p>
+		
+		<pre>
+&lt;div class="slider" style="width: 50%;"&gt;&lt;/div&gt;
+
+&lt;div class="slider-range" style="width: 99%;"&gt;&lt;/div&gt;
+		</pre>
+		
+		<p>By using class "slider", the result will be a single value slider.<br />
+		By using class "slider-range", the result will be a slider with two handles, defining a range of values.</p>
+		
+		<p>You can define the width of your sliders individually, via the width style attribute. For full-width sliders, use width of 99%, so the tooltip, won't make a horizontal scrollbar.</p>
+		
+		
+		
+		
+		
+		<hr />
+		
+		
+		
+		
+		
+		
+		
+		<p><strong>Modal boxes</strong></p>
+		
+		<p>You can use the modal boxes for displaying remote files. To make a link to open a modal box, you just have to add a class="modal":</p>
+		
+		<pre>
+	&lt;a href="remote_file.html" class="modal"&gt;open modal&lt;/a&gt;
+		</pre>
+		
+		<p>The modal boxes are powered by the awesome Fancybox plugin. For full documentation of Fancybox, please visit <a href="http://fancybox.net/howto">their site</a>.</p>
+		
+		
+		
+		
+		
+		
+		
+		<hr />		
+		
+			
+		
+		
+		
+		<p><strong>Tooltips</strong></p>
+		
+		<p>The tooltip plugin reads the title attribute of the element and makes a fancy title from it. You can attach the tooltip plugin to any element, by adding a class of "tt" to it.</p>
+		
+		<pre>
+	&lt;div class="tt" title="This is the tooltip text"&gt;Tooltip demo&lt;/div&gt;
+		</pre>
+				
+		
+		
+		
+		
+		
+		
+		<hr />
+		<p><strong>Sortable image lists with view/delete menus</strong></p>
+		
+		<p>Adminium gives you a super cool way to manage images - you can sort them via drag &amp; drop, view and delete them. See it at the end of the demo page. Here's how it's done:</p>
+		
+		<pre>
+&lt;ul class="imglist"&gt;
+	&lt;li&gt;
+		&lt;img src="images/thumb1.jpg" alt="" /&gt;
+		&lt;ul&gt;
+			&lt;li class="view"&gt;&lt;a href="big_image.jpg" class="modal" rel="gallery" title="Image title 1"&gt;View&lt;/a&gt;&lt;/li&gt;
+			&lt;li class="delete"&gt;&lt;a href="#deleted"&gt;Delete&lt;/a&gt;&lt;/li&gt;
+		&lt;/ul&gt;
+	&lt;/li&gt;
+	
+	&lt;li&gt;
+		&lt;img src="images/thumb2.jpg" alt="" /&gt;
+		&lt;ul&gt;
+			&lt;li class="view"&gt;&lt;a href="big_image.jpg" class="modal" rel="gallery" title="Image title 2"&gt;View&lt;/a&gt;&lt;/li&gt;
+			&lt;li class="delete"&gt;&lt;a href="#"&gt;Delete&lt;/a&gt;&lt;/li&gt;
+		&lt;/ul&gt;
+	&lt;/li&gt;
+	
+	&lt;li&gt;
+		&lt;img src="images/thumb3.jpg" alt="" /&gt;
+		&lt;ul&gt;
+			&lt;li class="view"&gt;&lt;a href="big_image.jpg" class="modal" rel="gallery" title="Image title 3"&gt;View&lt;/a&gt;&lt;/li&gt;
+			&lt;li class="delete"&gt;&lt;a href="#deleted"&gt;Delete&lt;/a&gt;&lt;/li&gt;
+		&lt;/ul&gt;
+	&lt;/li&gt;
+	
+	...
+	
+&lt;/ul&gt;
+		</pre>
+		
+		<p>There is an unordered list with a class of <em>"imglist"</em>, each list items contains a thumbnail (100px x 100px) and another unordered list, which contains the "View" and "Delete" links.</p>
+		
+		<p>Each element is draggable for easy sorting. You can see the many options for the drag &amp; drop at the <a href="http://jqueryui.com/demos/sortable/">jQuery UI documentation</a>.</p>
+		
+		<p>The "View" link will open your full size image in a modal box. You should put the address of your full size image file in the anchor tag.</p>
+		
+		<p>The "Delete" links could make an AJAX call to delete the file and give the user a message or just follow a regular link. When clicked, the user would be prompted for confirmation "Are you sure you want to delete this image?". If the answer is "Yes", the link will be followed, otherwise nothing will happen. You can customize the question asked, by editing the "Image delete confirmation", in the js/custom.js file.</p>
+		
+		
+		
+		
+		
+		
+		
+		<hr />
+		
+		
+		
+		
+
+
+		<h3 id="cssFiles"><strong>B) CSS Files and Structure</strong> - <a href="#toc">top</a></h3>
+
+		<p>Adminium uses some CSS3 features like rounded corners, text shadows, box shadows, etc. Some of these are still not supported in Internet Explorer, but will degrade gracefully.</p>
+
+		<p>The templates comes with these 9 CSS files:</p> 
+		<ul>
+			<li><strong>style.css</strong> contains the major styles, layouts, etc.</li>
+			<li><strong>green.css</strong> contains the styles for the green skin.</li>
+			<li><strong>red.css</strong> contains the styles for the red</li>
+			<li><strong>ie.css</strong> contains fixes for IE7 and IE6.</li>
+			<li><strong>jquery.wysiwyg.css</strong> is the CSS file for the WYSIWYG plugin, which turns a textarea into rich text editor.</li>
+			<li><strong>wysiwyg.css</strong> contains custom styles for the WYSIWYG editor.</li>
+			<li><strong>fancybox.css</strong> is the CSS file for the Fancybox plugin, used for modal boxes.</li>
+			<li><strong>visualize.css</strong> is the CSS file for the jQuery Visualize plugin, that creates the graphs.</li>
+			<li><strong>date_input.css</strong> - the CSS that styles the calendar box for the date picker</li>
+			<li><strong>jquery.minicolors.css</strong> CSS for the color picker</li>
+		</ul>
+		
+		<p>The style.css is separated into logical sections:</p>
+		
+		<pre>	
+/* Header */ - The rules, formatting the header
+
+/* User menu */ - The styled for the user menu
+
+/* Search form */ - The search bar in the header and the quick results
+
+/* Sidebar */ - The styles for the sidebar, the navigation and the status box
+
+/* Content */ - The styles for the content
+
+/* Statistics */ - The styles for today's statistics. If you need to edit the statistics graph CSS, yo can find it in css/visualize.css
+
+/* Messages */ - Inline messages (info, success, warning, error)
+
+/* HUD Messages */ - HUD messages styles
+
+/* Progress bars */ - Progress bars
+
+/* Forms */ - Styles for the form elements
+
+/* Image list */ - The image management mini menus styles
+
+/* Slider */ - The styles for the sliders
+
+/* Login page */ - The styles for the login page
+		</pre>
+				
+				
+				
+				
+				
+		<hr />
+				
+				
+				
+				
+				
+		
+		<p><strong>Skins</strong></p>
+		
+		<p>By default the template will use the original, blue skin. If you want to use the green or red skin, you should include green.css or red.css in the head of the page:</p>
+		
+		<pre>
+&lt;style type="text/css" media="all"&gt;
+@import url("css/style.css");
+@import url("css/visualize.css");
+@import url("css/date_input.css");
+@import url("css/jquery.minicolors.css");
+@import url("css/jquery.wysiwyg.css");
+@import url("css/jquery.fancybox.css");
+@import url("css/tipsy.css");
+
+@import url("css/green.css");
+&lt;/style&gt;
+		</pre>
+		
+		<p><strong>Make sure to include it as the last file, since the skins overwrite some of the styles from the other files.</strong></p>
+		
+				
+				
+				
+				
+				
+		<hr>
+		
+		
+		
+		
+		<h3 id="javascript"><strong>C) JavaScript</strong> - <a href="#toc">top</a></h3>
+		
+		<p>The template uses jQuery for enhancements and effects. You should find these files in the /js/ folder:</p>
+		
+		<ol>
+			<li><strong>jquery.wysiwyg.js</strong> the plugin which turns a textarea into rich text editor</li>
+			<li><strong>jquery.date_input.min.js</strong> is the date picker plugin</li>
+			<li><strong>jquery.minicolors.min.js</strong> - the color picker plugin</li>
+			<li><strong>jquery.fancybox.js</strong> is the plugin, used for modal boxes</li>
+			<li><strong>excanvas.js</strong> is a plugin that adds canvas support to Internet Explorer 6</li>
+			<li><strong>jquery.visualize.js</strong> is the plugin that creates the graphs</li>
+			<li><strong>jquery.tablesorter.min.js</strong> the plugin for sortable tables</li>
+			<li><strong>jquery.tipsy.js</strong> the plugin for the tooltips</li>
+			<li><strong>custom.js</strong> is the file containing most of the settings for the plugins and some custom scripts</li>
+		</ol>
+		
+		<p>The jQuery core and jQuery UI files are loaded from the official jQuery CDN, as best practices recommends. You can always download them and include them locally, if needed.</p>
+
+
+
+
+				
+		<hr>
+		
+		
+		
+		
+		
+		<h3 id="psdFiles"><strong>D) PSD Files</strong> - <a href="#toc">top</a></h3>
+		
+		<p>In the /psds folder, you can find three .psd files:</p>
+				
+		<ol>
+			<li><strong>mbg.psd</strong> - Contains the color gradients for the 3 skins. All the button inputs and the navigation hover uses this background.</li>
+			<li><strong>onoff.psd</strong> - The graphic for the On/Off switch</li>
+			<li><strong>handle.psd</strong> - The graphic for the slider handles</li>
+		</ol>
+		
+		
+		
+		
+		<hr>
+
+
+				
+		
+				
+		
+		<h3 id="credits"><strong>E) Sources and Credits</strong> - <a href="#toc">top</a></h3>
+				
+		<ul>
+			<li><a href="http://jquery.com/">jQuery</a></li>
+			<li><a href="http://jqueryui.com/">jQuery UI</a></li>
+			<li><a href="http://fancybox.net/">Fancybox</a></li>
+			<li><a href="http://www.filamentgroup.com/lab/update_to_jquery_visualize_accessible_charts_with_html5_from_designing_with/">jQuery Visualize</a></li>
+			<li><a href="http://jonathanleighton.com/projects/date-input">jQuery Date Input</a></li>
+			<li><a href="https://github.com/claviska/jquery-miniColors/">jQuery miniColors</a></li>
+			<li><a href="http://code.google.com/p/explorercanvas/">explorercanvas</a></li>
+			<li><a href="http://code.google.com/p/jwysiwyg/">jwysiwyg</a></li>
+			<li><a href="http://tablesorter.com/">Tablesorter 2.0</a></li>
+			<li><a href="https://github.com/jaz303/tipsy">Tipsy</a></li>
+			<li><a href="http://www.mcdodesign.com/">Sidebar functions icons</a></li>
+		</ul>
+		
+		
+		
+		
+		<hr>
+		
+		
+		
+		
+		
+		<p>Once again, thank you so much for purchasing this theme. As I said at the beginning, I'd be glad to help you if you have any questions relating to this theme. No guarantees, but I'll do my best to assist. If you have a more general question relating to the themes on ThemeForest, you might consider visiting the forums and asking your question in the "Item Discussion" section.</p> 
+		
+		<p class="append-bottom alt large"><strong>Emil Nikov</strong></p>
+		<p><a href="#toc">Go To Table of Contents</a></p>
+		
+		<hr class="space">
+	</div><!-- end div .container -->
+</body>
+</html>

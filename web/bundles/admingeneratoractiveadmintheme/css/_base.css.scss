@@ -1,0 +1,393 @@
+/* Active Admin CSS */
+@import "mixins/_all.css.scss";
+
+// Reset Away!
+@include global-reset;
+
+// Partials
+@import "_typography.css.scss";
+@import "_header.css.scss";
+@import "_forms.css.scss";
+@import "components/_comments.css.scss";
+@import "components/_flash_messages.css.scss";
+@import "components/_date_picker.css.scss";
+@import "components/_tables.css.scss";
+
+body {
+  font-family: Helvetica, Arial, sans-serif;
+  line-height: 150%;
+  font-size: 72%;
+  background: #fff;
+  margin: 0;
+  padding: 0;
+  color: $text-color;
+}
+
+// ----------------------------------- Page Title Bar 
+#body_content h1 {
+  @include section-header;
+  @include clearfix;
+  @include box-sizing(border-box);
+  display: table;
+  width: 100%;
+  position: relative; 
+  margin: 0; 
+  padding: 10px $horizontal-page-margin; 
+  margin: 0;
+  font-size: 2.6em;
+  font-weight: bold;
+
+  #titlebar_left, #titlebar_right {
+    height: 50px;
+    vertical-align: middle;
+    display: table-cell;
+  }
+  
+  #titlebar_right {
+    text-align: right;
+  }
+  
+  .action_items { 
+    a { 
+      @include light-button; 
+      @include icon(#777, 0.8em); 
+      @include gradient(#f9f9f9, #dddbdb);
+      display: inline-block;
+      padding: .8em 1.5em .7em 1.5em;
+      border: 1px solid #f8f8f8;
+      span.icon { vertical-align: bottom; margin-right: 4px;} 
+      &:hover{ @include icon-color(#000); }
+    }
+  }
+}
+
+// ----------------------------------- Main Structure
+
+#wrapper {
+  display: table;
+  width: 100%;
+}
+
+#body_content { 
+  margin: 0; 
+  
+  
+  .main_content { 
+    float: left; 
+    width: 78%; 
+    padding: 25px $horizontal-page-margin; 
+  }
+
+  .full_size {
+      width: 95%;
+  }
+
+  &.without_sidebar #main_content_wrapper #main_content{ margin-right: 0; }
+
+  #sidebar { 
+    float: left; 
+    width: $sidebar-width; 
+    margin-left: -$sidebar-width;
+  }
+}
+
+.filters {
+    width: 16%;
+    float: left;
+    label {
+        display: block;
+    }
+}
+// ----------------------------------- Footer 
+#footer {
+  padding: 30px 30px;  
+  font-size: 0.8em; 
+  clear: both; 
+
+  p { 
+    padding-top: 10px
+  }
+}
+
+// ----------------------------------- Links 
+a, a:link, a:visited {
+  color: $link-color;
+  text-decoration: underline;
+}
+a:hover { text-decoration: none; }
+
+// ----------------------------------- Buttons 
+
+td, p {
+  @include icon(#B3BCC1, 0.8em);
+  span.icon { margin: 0 3px; }
+}
+
+a.member_link {
+  margin-right: 7px;
+  white-space: nowrap;
+}
+
+a.button, input[type=submit] { @include dark-button; }
+
+// ----------------------------------- Breadcrumbs 
+.breadcrumb {
+  display: block;
+  font-size: 0.9em;
+  font-weight: normal;
+  line-height: 1.0em;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+
+  a, a:link {
+    color: #8a949e ;
+    text-decoration: none;
+  }
+
+  a:hover { text-decoration: underline; }
+
+  .breadcrumb_sep {
+    margin: 0 2px;
+    color: #aab2ba;
+  }
+}
+
+// ----------------------------------- Sections & Panels
+// Helper class to apply to elements to make them sections
+.section, .panel{ @include section; }
+
+// ----------------------------------- Blank Slate
+
+.blank_slate_container {
+  clear: both;
+  text-align: center;
+  
+  .blank_slate {
+    @include rounded;
+    -webkit-font-smoothing: antialiased;
+    border: 1px dashed #DADADA;
+    color: #AAA;
+    display: inline-block;
+    font-size: 1.2em;
+    font-weight: bold;
+    padding: 14px 25px;
+    text-align: center;
+    
+    small {
+      display: block;
+      font-size: 0.9em;
+      font-weight: normal;
+    }
+  }
+}
+
+.admin_dashboard .blank_slate_container .blank_slate {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.with_sidebar .blank_slate_container .blank_slate {
+  margin-top: 80px;
+}
+
+// ----------------------------------- Sidebar Sections 
+.sidebar_section { @include section; }
+
+// -------------------------------------- Pagination 
+div.pagination{ 
+  float: right;
+  margin-bottom: 5px;
+  font-size: 0.95em;
+  color: #b3bcc1;
+  b { color: #5c6469; }
+}
+
+.paginated_collection_contents { 
+  clear: both;
+}
+
+.pagination li { 
+  display: inline; 
+  font-size: 0.9; 
+  margin-left: 10px; 
+
+  a { @include light-button; }
+  .current { @include default-button; }
+  a, .current { 
+    @include rounded(0px);
+    margin-right: 4px; 
+    padding: 2px 5px;
+  }
+  .current { padding-left: 7px; }
+}
+
+// -------------------------------------- Index Footer (Under Table) 
+#index_footer { padding-top: 5px; text-align: right; font-size: 0.85em; }
+
+
+
+.index_content { clear: both; }
+
+// -------------------------------------- Index as Grid 
+table.index_grid td { border: none; background: none; padding: 0 20px 20px 0; margin: 0;}
+
+
+// -------------------------------------- Logged Out 
+body.logged_out {
+  background: #e8e9ea;
+
+  #content_wrapper{
+    width: 500px;
+    margin: 70px auto;
+    #active_admin_content {
+      @include shadow;
+      background: #fff;
+      padding: 13px 30px;
+    }
+  }
+
+  h2 {
+    @include section-header;
+    @include primary-gradient;
+    @include text-shadow(#000);
+    color: #fff;
+    margin: -13px -30px 20px -30px;
+  }
+
+  #login {
+    /* Login Form */
+    form {
+      fieldset {
+        @include no-shadow;
+        background: none;
+        padding: 0;
+        li { padding: 10px 0; }
+
+        input[type=text], input[type=email], input[type=password] {
+          width: 70%;
+        }
+        &.buttons { margin-left: 20%; }
+        margin-bottom: 0;
+      }
+    }
+
+    a { float: right; margin-top: -32px; }
+  }
+
+}
+
+// -------------------------------------- Dashboard 
+table.dashboard {
+  width: 100%; 
+  td { border-bottom: none; }
+  .dashboard_section { @include section; }
+}
+
+
+// -------------------------------------- Resource Attributes Table 
+.attributes_table { overflow: hidden; }
+
+.attributes_table table {
+  th, td {
+    padding: 8px $cell-horizontal-padding 6px $cell-horizontal-padding;
+    vertical-align: top;
+    border-bottom: 1px solid #e8e8e8; 
+  }
+  th {
+    @include no-shadow;
+    @include no-gradient;
+    width: 150px;
+    font-size: 0.9em;
+    padding-left: 0;
+    text-transform: uppercase;
+    color: $primary-color;
+    @include text-shadow;
+  }
+  td {
+    .empty {
+      color: #bbb;
+      font-size: 0.8em;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+    }
+  }
+}
+
+.sidebar_section .attributes_table th { width: 50px; }
+
+
+// -------------------------------------- Status Tags
+.status {
+  background: darken($secondary-color, 15%);
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  padding: 3px 5px 2px 5px;
+  font-size: 0.8em;
+
+  &.ok, &.published, &.complete, &.completed, &.green { background: #8daa92; }
+  &.warn, &.warning, &.orange { background: #e29b20; }
+  &.error, &.errored, &.red { background: #d45f53; }
+
+
+}
+
+
+// -------------------------------------- Scopes
+.list_scopes {
+  float: left;
+  margin-bottom: 10px;
+  font-size: 1.0em;
+
+  .list_scope_group {
+    float: left;
+    padding-right: 16px;
+    a {
+      padding: 4px 8px 3px 8px;
+      margin-right: 4px;
+      text-decoration: none;
+      font-weight: bold;
+      color: #888;
+      &:hover { text-decoration: underline; }
+      &.active { 
+        @include rounded(5px);
+        @include inset-shadow(0,1px,0,#ccc);
+        @include text-shadow;
+        background: #efefef;
+        color: #666;
+        em { font-weight: bold; font-style: normal; }
+      }
+    }
+    .count{ color: #aaa; font-size: 0.9em; }
+  }
+  .scopes_seperator { display: none; }
+}
+
+// -------------------------------------- Columns
+.columns {
+  clear: both;
+  padding: 0;
+  .column { float: left; }
+}
+
+.main_content .list_nbresults {
+  text-align: right;
+  color: #B3BCC1;
+  font-size: 0.95em;
+  margin-bottom: 5px;
+  b {
+    color: #5C6469;
+  }
+}
+
+.main_content ul.actions {
+  list-style-type: none;
+  margin: 5px 0 0 0; 
+  padding: 0;
+  li {
+    margin-right: 5px;
+    padding: 0;
+    display: inline-block;
+    a { @include light-bigger-button; }
+  }
+}

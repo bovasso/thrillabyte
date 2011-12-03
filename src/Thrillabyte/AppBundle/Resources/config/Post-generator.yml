@@ -1,0 +1,43 @@
+generator: admingenerator.generator.doctrine_odm
+params:
+  model: Thrillabyte\AppBundle\Document\Post
+  namespace_prefix: Thrillabyte
+  bundle_name: AppBundle
+  fields: 
+    body:
+      formType: textarea
+builders:
+  list:
+    params:
+      title: Posts
+      display: [id, title, is_published]
+      actions:
+        new: ~
+      object_actions:
+        edit: ~
+        delete: 
+          confirm: Are you sure to delete {{ Post.title }} ?
+  filters:
+    params:
+      display: ~
+  new:
+    params:
+      title: New Post
+      display: 
+        "None": [[title],[body]]
+        "Categories":  [[categories]]
+        "Tags": [[hashField]]
+        "Authoring Information": [[is_published]]
+      actions:
+        list: ~
+  edit:
+    params:
+      title: {{ Post.title }}
+      display: 
+        "None": [[title],[body]]
+        "Categories":  [[categories]]
+        "Tags": [[hashField]]
+        "Authoring Information": [[is_published]]
+      actions:
+        list: ~
+  delete: ~
